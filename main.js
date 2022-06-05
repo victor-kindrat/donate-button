@@ -1,16 +1,16 @@
 $('.alert').fadeOut(0);
-$('.popup__mask').fadeOut(0);
-let closePopup = () => {
+$(".popup__mask").fadeOut(0);
+function closePopup () {
     $('.popup__mask').fadeOut(300);
     $('.popup').css({
-        'animation': 'open 0.6s 1 cubic-bezier(0,.72,.41,.99) reverse'
+        'animation': 'open 0.3s 1 cubic-bezier(0,.72,.41,.99) reverse'
     })
     setTimeout(function () {
         $('.popup').css({
             'animation': 'unset',
             'display': 'none'
         })
-    },600);
+    },300);
     return '';
 }
 
@@ -34,7 +34,6 @@ tippy('#button', {
     offset: [10, 15],
     theme: 'theme',
     animation: 'scale',
-    extreme: true,
     inertia: true,
     allowHTML: true,
     touch: ['hold', 500],
@@ -56,13 +55,13 @@ $('#button').click(function () {
     $('.popup__mask').fadeIn(300);
     $('.popup').css({
         'display': 'flex',
-        'animation': 'open 0.6s 1 cubic-bezier(0,.72,.41,.99)'
+        'animation': 'open 0.3s 1 cubic-bezier(0,.72,.41,.99)'
     })
     setTimeout(function () {
         $('.popup').css({
             'animation': 'unset'
         })
-    },600)
+    },300)
 })
 
 $('#popup__close-btn').click(function () {
