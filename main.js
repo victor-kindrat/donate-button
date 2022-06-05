@@ -1,3 +1,4 @@
+$('.alert').fadeOut(0);
 $('.popup__mask').fadeOut(0);
 let closePopup = () => {
     $('.popup__mask').fadeOut(300);
@@ -12,6 +13,8 @@ let closePopup = () => {
     },600);
     return '';
 }
+
+new ClipboardJS('#popup__ok-btn');
 
 fetch('https:/source.unsplash.com/1920x1080/?sky')
     .then((data)=>{
@@ -34,10 +37,20 @@ tippy('#button', {
     extreme: true,
     inertia: true,
     allowHTML: true,
-    touch: ['hold', 500]
+    touch: ['hold', 500],
 });
 
-// alert(deviceType());
+tippy('#popup__ok-btn', {
+    content: "Натисніть щоб зберегти номер рахунку",
+    followCursor: true,
+    offset: [10, 15],
+    theme: 'theme',
+    animation: 'scale',
+    extreme: true,
+    inertia: true,
+    allowHTML: true,
+    interactive: true,
+});
 
 $('#button').click(function () {
     $('.popup__mask').fadeIn(300);
@@ -57,5 +70,11 @@ $('#popup__close-btn').click(function () {
 })
 
 $('#popup__ok-btn').click(function () {
-    closePopup();
+    $('.alert').fadeIn(300);
+    $(".alert").text('Збережено в буфер обміну');
+    setTimeout(function () {
+        $('.alert').fadeOut(300);
+        $(".alert").text('');
+        closePopup();
+    }, 3000)
 })
