@@ -17,4 +17,4 @@ tippy('#button', {
     allowHTML: true
 });
 
-alert(deviceType());
+// alert(deviceType());
