@@ -2,6 +2,8 @@
 Button with alert about fundraising 💵
 ---
 
+<a href="https://wakatime.com/badge/github/victor-kindrat/donate-button"><img src="https://wakatime.com/badge/github/victor-kindrat/donate-button.svg" alt="wakatime"></a>
+
 JS project. 
 
 ---
